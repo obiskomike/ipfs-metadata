@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Service
+  postgres:
+    image: postgres:latest
+    container_name: nft_metadata_postgres
+    environment:
+      POSTGRES_USER: youruser
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: yourdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist data across container restarts
+    ports:
+      - "5432:5432"  # Expose port 5432 for PostgreSQL
+    networks:
+      - nft-metadata-network
+
+  # Golang Application Service
+  nft-metadata-scraper:
+    build: .
+    container_name: nft_metadata_scraper
+#    env_file:
+# E     - .env
+    depends_on:
+      - postgres  # Ensure postgres service is up before this starts
+    ports:
+      - "8080:8080"  # Expose port 8080 for the Go API
+    networks:
+      - nft-metadata-network
+    restart: always  # Restart the container if it stops unexpectedly
+
+networks:
+  nft-metadata-network:
+    driver: bridge
+
+volumes:
+  postgres_data:  # Named volume for persisting database data
