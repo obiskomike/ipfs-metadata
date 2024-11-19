@@ -2,7 +2,7 @@ name: Build and Push to Amazon ECR
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ] 
 
 env:
   AWS_REGION: us-east-1                  # Replace with your AWS region 
