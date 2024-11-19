@@ -5,8 +5,8 @@ on:
     branches: [ "main" ]
 
 env:
-  AWS_REGION: us-east-2                   # Replace with your AWS region
-  ECR_REPOSITORY: my-ecr-repo             # Replace with your ECR repository name
+  AWS_REGION: us-east-1                  # Replace with your AWS region
+  ECR_REPOSITORY: ipfs-metadata
 
 permissions:
   contents: read
