@@ -40,7 +40,7 @@ git clone <https://github.com/obiskomike/ipfs-metadata.git> cd ipfs-metadata
 
 This application requires a PostgreSQL database to store data. You can choose between two options:
 
-## Option 1: Using AWS RDS (Recommended for Production)
+## Option 1: Using AWS RDS 
 
 AWS RDS (Relational Database Service) provides a managed PostgreSQL database.
 
