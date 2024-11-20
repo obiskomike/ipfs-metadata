@@ -33,9 +33,9 @@ Output format (e.g., json).
 # Step 2: Clone the Repository
 
 1. Clone your fork:
-
+```bash
 git clone <https://github.com/obiskomike/ipfs-metadata.git> cd ipfs-metadata
-
+```
 # Step 3: Configure the Database
 
 This application requires a PostgreSQL database to store data. You can choose between two options:
@@ -45,24 +45,29 @@ This application requires a PostgreSQL database to store data. You can choose be
 AWS RDS (Relational Database Service) provides a managed PostgreSQL database.
 
 Run this command  
+```bash
 terraform apply -target=aws_db_instance.free_tier_postgresql
-
+```bash
 - - - Once the instance is created, note the **Endpoint**, **Port**, **Username**, and
 
 **Password** for your database.
 
-- - **Configure the .env File**: In your project directory, create a .env file and add your database connection details:
+- - **Configure the .env File**: In your project directory,
+create a .env file and add your database connection details:
 
-DB_HOST=&lt;RDS-endpoint&gt; DB_PORT=5432
-
-DB_USER=&lt;your-db-username&gt; DB_PASSWORD=&lt;your-db-password&gt; DB_NAME=&lt;your-db-name&gt;
+DB_HOST=&lt;
+RDS-endpoint&gt;
+DB_PORT=5432
+DB_USER=&lt;your-db-username&gt;
+DB_PASSWORD=&lt;your-db-password&gt;
+DB_NAME=&lt;your-db-name&gt;
 
 ## Option 2: Using Docker (for Testing Locally)
 
 1. You can run PostgreSQL in a Docker container for local testing. Add the following command to run PostgreSQL:
-
+```bash
 docker compose up postgres –d
-
+```
 1. Update your .env file to point to localhost for testing.
 
 # Step 4: Containerize the Application
@@ -72,23 +77,29 @@ docker compose up postgres –d
 Build the Docker image: docker compose build
 
 Run the Docker container locally:
-
-docker compose up -d Access
-
+```bash
+docker compose up -d
+```
+Access
+```bash
 <http://localhost:8080/metadata>
-
+```
 # Step 5: Terraform
 
 ## 5.1 Initialize and Apply Terraform
 
 - - 1. Initialize Terraform:
-
-cd terraform terraform init
+```bash
+cd terraform
+```
+```
+terraform init
+```
 
 - - 1. Apply the configuration:
-
+```bash
 terraform apply
-
+```
 - - 1. Confirm the changes by typing yes.
         2.  Terraform will create the all resources.
 
