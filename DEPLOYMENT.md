@@ -54,13 +54,13 @@ terraform apply -target=aws_db_instance.free_tier_postgresql
 
 - - **Configure the .env File**: In your project directory,
 create a .env file and add your database connection details:
-
+```bash
 DB_HOST=RDS-endpoint
 DB_PORT=5432
 DB_USER=your-db-username
 DB_PASSWORD=your-db-password
 DB_NAME=your-db-name
-
+```
 ## Option 2: Using Docker (for Testing Locally)
 
 1. You can run PostgreSQL in a Docker container for local testing. Add the following command to run PostgreSQL:
@@ -122,11 +122,12 @@ Terraform will create the following resources:
 ### Actions
 
 - - 1. Add the following secrets:
+       ```bash
             1.  AWS_ACCESS_KEY_ID: The access key for your AWS IAM user.
             2.  AWS_SECRET_ACCESS_KEY: The secret key for your AWS IAM user.
             3.  AWS_REGION: The AWS region (e.g., us-east-1).
             4.  ECR_REPOSITORY: Your ECR repository name (e.g., ipfs-metadata).
-
+```
 ## 6.2 Create a GitHub Actions Workflow
 
 Create a .github/workflows/aws.yml file in your repository with the following content:
