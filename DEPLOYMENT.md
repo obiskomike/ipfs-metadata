@@ -47,7 +47,7 @@ AWS RDS (Relational Database Service) provides a managed PostgreSQL database.
 Run this command  
 ```bash
 terraform apply -target=aws_db_instance.free_tier_postgresql
-```bash
+```
 - - - Once the instance is created, note the **Endpoint**, **Port**, **Username**, and
 
 **Password** for your database.
@@ -55,12 +55,11 @@ terraform apply -target=aws_db_instance.free_tier_postgresql
 - - **Configure the .env File**: In your project directory,
 create a .env file and add your database connection details:
 
-DB_HOST=&lt;
-RDS-endpoint&gt;
+DB_HOST=RDS-endpoint
 DB_PORT=5432
-DB_USER=&lt;your-db-username&gt;
-DB_PASSWORD=&lt;your-db-password&gt;
-DB_NAME=&lt;your-db-name&gt;
+DB_USER=your-db-username
+DB_PASSWORD=your-db-password
+DB_NAME=your-db-name
 
 ## Option 2: Using Docker (for Testing Locally)
 
