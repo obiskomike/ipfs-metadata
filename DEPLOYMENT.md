@@ -127,11 +127,11 @@ Terraform will create the following resources:
             2.  AWS_SECRET_ACCESS_KEY: The secret key for your AWS IAM user.
             3.  AWS_REGION: The AWS region (e.g., us-east-1).
             4.  ECR_REPOSITORY: Your ECR repository name (e.g., ipfs-metadata).
-```
+           ```
 ## 6.2 Create a GitHub Actions Workflow
 
 Create a .github/workflows/aws.yml file in your repository with the following content:
-
+```bash
 name: Build and Push to Amazon ECR
 
 on:
@@ -192,7 +192,7 @@ run: |
 \--push .
 
 echo "Image URL: $ECR_REGISTRY/$ECR_REPOSITORY:latest"
-
+```
 ## Trigger the Workflow
 
 - When you push changes to the main branch, GitHub Actions will automatically build the Docker image and push it to your container registry.
