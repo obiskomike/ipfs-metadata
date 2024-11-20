@@ -28,7 +28,7 @@ Access Key ID
 Secret Access Key
 Default Region (e.g., us-east-1)
 Output format (e.g., json).
-
+```
 
 # Step 2: Clone the Repository
 
