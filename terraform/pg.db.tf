@@ -1,3 +1,5 @@
+## ADDED AWS RDS (PG)
+
 resource "aws_db_instance" "ipfs_metadata_pg" {
   identifier = "ipfs-metadata-pg"
 
